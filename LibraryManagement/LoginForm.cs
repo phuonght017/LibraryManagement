@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace LibraryManagement
 {
@@ -36,6 +37,13 @@ namespace LibraryManagement
                 string cap = "Error Detected in Login";
                 DialogResult loginError = MessageBox.Show(message, cap);
             }
+
+            SqlConnection conn = new SqlConnection(MyGlobals.connectionStr);
         }
     }
+}
+
+public static class MyGlobals
+{
+    public static string connectionStr = "D:\\PROJECTCODE\\CSHARP\\GITCLONE\\LIBRARYMANAGEMENT\\LIB-DB\\DATABASE2.MDF";
 }
