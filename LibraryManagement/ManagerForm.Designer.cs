@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerForm));
-            CancleBtn = new Button();
+            ChangePasswordBtn = new Button();
             EditBtn = new Button();
-            pagesBox = new TextBox();
-            pubDateBox = new TextBox();
-            priceBox = new TextBox();
-            authorBox = new TextBox();
-            publisherBox = new TextBox();
-            titleBox = new TextBox();
+            addressBox = new TextBox();
+            phoneNumberBox = new TextBox();
+            genderBox = new TextBox();
+            nameBox = new TextBox();
+            emailBox = new TextBox();
+            managerIDBox = new TextBox();
             label7 = new Label();
             label6 = new Label();
             label5 = new Label();
@@ -48,83 +48,92 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // CancleBtn
+            // ChangePasswordBtn
             // 
-            CancleBtn.BackColor = Color.FromArgb(243, 140, 96);
-            CancleBtn.Font = new Font("Segoe UI Emoji", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            CancleBtn.ForeColor = Color.FromArgb(238, 226, 220);
-            CancleBtn.Location = new Point(307, 595);
-            CancleBtn.Name = "CancleBtn";
-            CancleBtn.Size = new Size(217, 50);
-            CancleBtn.TabIndex = 41;
-            CancleBtn.Text = "CHANGE PASSWORD";
-            CancleBtn.UseVisualStyleBackColor = false;
+            ChangePasswordBtn.BackColor = Color.FromArgb(243, 140, 96);
+            ChangePasswordBtn.Font = new Font("Segoe UI Emoji", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            ChangePasswordBtn.ForeColor = Color.FromArgb(238, 226, 220);
+            ChangePasswordBtn.Location = new Point(297, 386);
+            ChangePasswordBtn.Name = "ChangePasswordBtn";
+            ChangePasswordBtn.Size = new Size(217, 50);
+            ChangePasswordBtn.TabIndex = 41;
+            ChangePasswordBtn.Text = "CHANGE PASSWORD";
+            ChangePasswordBtn.UseVisualStyleBackColor = false;
+            ChangePasswordBtn.Click += ChangePasswordBtn_Click;
             // 
             // EditBtn
             // 
             EditBtn.BackColor = Color.FromArgb(212, 59, 111);
             EditBtn.Font = new Font("Segoe UI Emoji", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             EditBtn.ForeColor = Color.FromArgb(238, 226, 220);
-            EditBtn.Location = new Point(98, 595);
+            EditBtn.Location = new Point(125, 386);
             EditBtn.Name = "EditBtn";
             EditBtn.Size = new Size(145, 50);
             EditBtn.TabIndex = 40;
             EditBtn.Text = "EDIT";
             EditBtn.UseVisualStyleBackColor = false;
+            EditBtn.Click += EditBtn_Click;
             // 
-            // pagesBox
+            // addressBox
             // 
-            pagesBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            pagesBox.ForeColor = SystemColors.WindowFrame;
-            pagesBox.Location = new Point(204, 334);
-            pagesBox.Name = "pagesBox";
-            pagesBox.Size = new Size(310, 29);
-            pagesBox.TabIndex = 36;
+            addressBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            addressBox.ForeColor = SystemColors.InfoText;
+            addressBox.Location = new Point(204, 334);
+            addressBox.Name = "addressBox";
+            addressBox.ReadOnly = true;
+            addressBox.Size = new Size(310, 29);
+            addressBox.TabIndex = 36;
             // 
-            // pubDateBox
+            // phoneNumberBox
             // 
-            pubDateBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            pubDateBox.ForeColor = SystemColors.WindowFrame;
-            pubDateBox.Location = new Point(204, 286);
-            pubDateBox.Name = "pubDateBox";
-            pubDateBox.Size = new Size(310, 29);
-            pubDateBox.TabIndex = 35;
+            phoneNumberBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            phoneNumberBox.ForeColor = SystemColors.InfoText;
+            phoneNumberBox.Location = new Point(204, 286);
+            phoneNumberBox.Name = "phoneNumberBox";
+            phoneNumberBox.ReadOnly = true;
+            phoneNumberBox.Size = new Size(310, 29);
+            phoneNumberBox.TabIndex = 35;
             // 
-            // priceBox
+            // genderBox
             // 
-            priceBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            priceBox.ForeColor = SystemColors.WindowFrame;
-            priceBox.Location = new Point(204, 232);
-            priceBox.Name = "priceBox";
-            priceBox.Size = new Size(310, 29);
-            priceBox.TabIndex = 34;
+            genderBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            genderBox.ForeColor = SystemColors.InfoText;
+            genderBox.Location = new Point(204, 232);
+            genderBox.Name = "genderBox";
+            genderBox.ReadOnly = true;
+            genderBox.Size = new Size(310, 29);
+            genderBox.TabIndex = 34;
             // 
-            // authorBox
+            // nameBox
             // 
-            authorBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            authorBox.ForeColor = SystemColors.WindowFrame;
-            authorBox.Location = new Point(204, 182);
-            authorBox.Name = "authorBox";
-            authorBox.Size = new Size(310, 29);
-            authorBox.TabIndex = 33;
+            nameBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            nameBox.ForeColor = SystemColors.InfoText;
+            nameBox.ImeMode = ImeMode.NoControl;
+            nameBox.Location = new Point(204, 182);
+            nameBox.Name = "nameBox";
+            nameBox.ReadOnly = true;
+            nameBox.Size = new Size(310, 29);
+            nameBox.TabIndex = 33;
             // 
-            // publisherBox
+            // emailBox
             // 
-            publisherBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            publisherBox.ForeColor = SystemColors.WindowFrame;
-            publisherBox.Location = new Point(204, 133);
-            publisherBox.Name = "publisherBox";
-            publisherBox.Size = new Size(310, 29);
-            publisherBox.TabIndex = 32;
+            emailBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            emailBox.ForeColor = SystemColors.InfoText;
+            emailBox.Location = new Point(204, 133);
+            emailBox.Name = "emailBox";
+            emailBox.ReadOnly = true;
+            emailBox.Size = new Size(310, 29);
+            emailBox.TabIndex = 32;
             // 
-            // titleBox
+            // managerIDBox
             // 
-            titleBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            titleBox.ForeColor = SystemColors.WindowFrame;
-            titleBox.Location = new Point(204, 86);
-            titleBox.Name = "titleBox";
-            titleBox.Size = new Size(310, 29);
-            titleBox.TabIndex = 31;
+            managerIDBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            managerIDBox.ForeColor = SystemColors.InfoText;
+            managerIDBox.Location = new Point(204, 86);
+            managerIDBox.Name = "managerIDBox";
+            managerIDBox.ReadOnly = true;
+            managerIDBox.Size = new Size(310, 29);
+            managerIDBox.TabIndex = 31;
             // 
             // label7
             // 
@@ -206,7 +215,7 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(40, 385);
+            dataGridView1.Location = new Point(38, 487);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(514, 180);
@@ -219,14 +228,14 @@
             BackColor = Color.FromArgb(238, 226, 220);
             ClientSize = new Size(584, 691);
             Controls.Add(dataGridView1);
-            Controls.Add(CancleBtn);
+            Controls.Add(ChangePasswordBtn);
             Controls.Add(EditBtn);
-            Controls.Add(pagesBox);
-            Controls.Add(pubDateBox);
-            Controls.Add(priceBox);
-            Controls.Add(authorBox);
-            Controls.Add(publisherBox);
-            Controls.Add(titleBox);
+            Controls.Add(addressBox);
+            Controls.Add(phoneNumberBox);
+            Controls.Add(genderBox);
+            Controls.Add(nameBox);
+            Controls.Add(emailBox);
+            Controls.Add(managerIDBox);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -236,7 +245,7 @@
             Controls.Add(label1);
             ForeColor = Color.Cornsilk;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             MaximizeBox = false;
             Name = "ManagerForm";
             Text = "Manager Profile";
@@ -247,14 +256,14 @@
 
         #endregion
 
-        private Button CancleBtn;
+        private Button ChangePasswordBtn;
         private Button EditBtn;
-        private TextBox pagesBox;
-        private TextBox pubDateBox;
-        private TextBox priceBox;
-        private TextBox authorBox;
-        private TextBox publisherBox;
-        private TextBox titleBox;
+        private TextBox addressBox;
+        private TextBox phoneNumberBox;
+        private TextBox genderBox;
+        private TextBox nameBox;
+        private TextBox emailBox;
+        private TextBox managerIDBox;
         private Label label7;
         private Label label6;
         private Label label5;

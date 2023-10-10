@@ -10,29 +10,22 @@ using System.Windows.Forms;
 
 namespace LibraryManagement
 {
-    public partial class EditMember : Form
+    public partial class ChangePasswordForm : Form
     {
-        public EditMember()
+        public ChangePasswordForm()
         {
             InitializeComponent();
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            // update changes to DB
+            // check curr password and compare new password then update to DB
             this.Close();
         }
 
         private void CancleBtn_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void ShowListLabel_Click(object sender, EventArgs e)
-        {
-            BooksBorrowedList f =  new BooksBorrowedList();
-            // pass data
-            f.ShowDialog();
         }
     }
 }

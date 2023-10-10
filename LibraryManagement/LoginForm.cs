@@ -38,7 +38,6 @@ namespace LibraryManagement
                 DialogResult loginError = MessageBox.Show(message, cap);
             }
 
-            SqlConnection conn = new SqlConnection(MyGlobals.connectionStr);
         }
     }
 }

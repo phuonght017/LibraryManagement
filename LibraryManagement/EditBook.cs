@@ -16,5 +16,28 @@ namespace LibraryManagement
         {
             InitializeComponent();
         }
+
+        private void EditBook_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SaveBtn_Click(object sender, EventArgs e)
+        {
+            // update to DB
+            this.Close();
+        }
+
+        private void CancleBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ShowListLabel_Click(object sender, EventArgs e)
+        {
+            StudentBorrowingList f = new StudentBorrowingList();
+            // pass data
+            f.ShowDialog();
+        }
     }
 }

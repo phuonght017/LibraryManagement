@@ -7,10 +7,16 @@
     <Compile Update="AddMember.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="BooksBorrowedList.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="BooksForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="BorrowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ChangePasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="EditBook.cs">
@@ -32,6 +38,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ReturnForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="StudentBorrowingList.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
