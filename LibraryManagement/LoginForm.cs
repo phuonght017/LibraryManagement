@@ -15,6 +15,7 @@ namespace LibraryManagement
 {
     public partial class LoginForm : Form
     {
+        public static string Manager_ID;
         public LoginForm()
         {
             InitializeComponent();
@@ -44,6 +45,7 @@ namespace LibraryManagement
                 if (email == dr[6].ToString().Trim() && password  == dr[1].ToString().Trim())
                 {
                     authorized = true;
+                    Manager_ID = dr[0].ToString().Trim();
                     MenuForm f1 = new MenuForm();
                     f1.Show();
                     this.Hide();
@@ -56,6 +58,7 @@ namespace LibraryManagement
                 string cap = "Error Detected in Login";
                 DialogResult loginError = MessageBox.Show(message, cap);
             }
+            conn.Close();
         }
     }
 }

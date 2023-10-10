@@ -43,13 +43,13 @@
             publisherBox = new TextBox();
             authorBox = new TextBox();
             priceBox = new TextBox();
-            pubDateBox = new TextBox();
             pagesBox = new TextBox();
             descriptionBox = new TextBox();
             totalNumBox = new TextBox();
             locationBox = new TextBox();
             SaveBtn = new Button();
             CancleBtn = new Button();
+            pupDateBox = new DateTimePicker();
             SuspendLayout();
             // 
             // label1
@@ -68,7 +68,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(18, 60, 105);
-            label2.Location = new Point(59, 98);
+            label2.Location = new Point(54, 98);
             label2.Name = "label2";
             label2.Size = new Size(50, 25);
             label2.TabIndex = 1;
@@ -198,15 +198,6 @@
             priceBox.Size = new Size(310, 29);
             priceBox.TabIndex = 13;
             // 
-            // pubDateBox
-            // 
-            pubDateBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            pubDateBox.ForeColor = SystemColors.WindowFrame;
-            pubDateBox.Location = new Point(196, 294);
-            pubDateBox.Name = "pubDateBox";
-            pubDateBox.Size = new Size(310, 29);
-            pubDateBox.TabIndex = 14;
-            // 
             // pagesBox
             // 
             pagesBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -269,19 +260,30 @@
             CancleBtn.UseVisualStyleBackColor = false;
             CancleBtn.Click += CancleBtn_Click;
             // 
+            // pupDateBox
+            // 
+            pupDateBox.CalendarForeColor = SystemColors.ControlDarkDark;
+            pupDateBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            pupDateBox.Format = DateTimePickerFormat.Short;
+            pupDateBox.Location = new Point(195, 293);
+            pupDateBox.MinDate = new DateTime(1950, 10, 10, 0, 0, 0, 0);
+            pupDateBox.Name = "pupDateBox";
+            pupDateBox.Size = new Size(144, 29);
+            pupDateBox.TabIndex = 43;
+            // 
             // AddBook
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(238, 226, 220);
             ClientSize = new Size(584, 691);
+            Controls.Add(pupDateBox);
             Controls.Add(CancleBtn);
             Controls.Add(SaveBtn);
             Controls.Add(locationBox);
             Controls.Add(totalNumBox);
             Controls.Add(descriptionBox);
             Controls.Add(pagesBox);
-            Controls.Add(pubDateBox);
             Controls.Add(priceBox);
             Controls.Add(authorBox);
             Controls.Add(publisherBox);
@@ -320,12 +322,12 @@
         private TextBox publisherBox;
         private TextBox authorBox;
         private TextBox priceBox;
-        private TextBox pubDateBox;
         private TextBox pagesBox;
         private TextBox descriptionBox;
         private TextBox totalNumBox;
         private TextBox locationBox;
         private Button SaveBtn;
         private Button CancleBtn;
+        private DateTimePicker pupDateBox;
     }
 }
