@@ -43,13 +43,13 @@
             publisherBox = new TextBox();
             authorBox = new TextBox();
             priceBox = new TextBox();
-            pubDateBox = new TextBox();
             pagesBox = new TextBox();
             descriptionBox = new TextBox();
             totalNumBox = new TextBox();
             locationBox = new TextBox();
             SaveBtn = new Button();
             CancleBtn = new Button();
+            pubDateBox = new DateTimePicker();
             SuspendLayout();
             // 
             // label1
@@ -198,15 +198,6 @@
             priceBox.Size = new Size(310, 29);
             priceBox.TabIndex = 13;
             // 
-            // pubDateBox
-            // 
-            pubDateBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            pubDateBox.ForeColor = SystemColors.WindowFrame;
-            pubDateBox.Location = new Point(196, 294);
-            pubDateBox.Name = "pubDateBox";
-            pubDateBox.Size = new Size(310, 29);
-            pubDateBox.TabIndex = 14;
-            // 
             // pagesBox
             // 
             pagesBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -269,19 +260,27 @@
             CancleBtn.UseVisualStyleBackColor = false;
             CancleBtn.Click += CancleBtn_Click;
             // 
+            // pubDateBox
+            // 
+            pubDateBox.CalendarFont = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            pubDateBox.Location = new Point(196, 298);
+            pubDateBox.Name = "pubDateBox";
+            pubDateBox.Size = new Size(199, 23);
+            pubDateBox.TabIndex = 21;
+            // 
             // AddBook
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(238, 226, 220);
             ClientSize = new Size(584, 691);
+            Controls.Add(pubDateBox);
             Controls.Add(CancleBtn);
             Controls.Add(SaveBtn);
             Controls.Add(locationBox);
             Controls.Add(totalNumBox);
             Controls.Add(descriptionBox);
             Controls.Add(pagesBox);
-            Controls.Add(pubDateBox);
             Controls.Add(priceBox);
             Controls.Add(authorBox);
             Controls.Add(publisherBox);
@@ -320,12 +319,12 @@
         private TextBox publisherBox;
         private TextBox authorBox;
         private TextBox priceBox;
-        private TextBox pubDateBox;
         private TextBox pagesBox;
         private TextBox descriptionBox;
         private TextBox totalNumBox;
         private TextBox locationBox;
         private Button SaveBtn;
         private Button CancleBtn;
+        private DateTimePicker pubDateBox;
     }
 }

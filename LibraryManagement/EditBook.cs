@@ -30,15 +30,15 @@ namespace LibraryManagement
             adapter.Fill(dt);
             // fill data to text boxes
             DataRow dr = dt.Rows[0];
-            titleBox.Text = dr[1].ToString().Trim();
-            publisherBox.Text = dr[2].ToString().Trim();
-            authorBox.Text = dr[3].ToString().Trim();
-            priceBox.Text = dr[4].ToString().Trim();
-            pubDateBox.Value = DateTime.Parse(dr[5].ToString().Trim());
-            pagesBox.Text = dr[6].ToString().Trim();
-            descriptionBox.Text = dr[7].ToString().Trim();
-            totalNumBox.Text = dr[8].ToString().Trim();
-            locationBox.Text = dr[10].ToString().Trim();
+            titleBox.Text = dr[1].ToString().Trim(); 
+            publisherBox.Text = dr[2].ToString().Trim(); 
+            authorBox.Text = dr[3].ToString().Trim();        
+            priceBox.Text = dr[4].ToString().Trim();           
+            pubDateBox.Value = DateTime.Parse(dr[5].ToString().Trim());            
+            pagesBox.Text = dr[6].ToString().Trim();            
+            descriptionBox.Text = dr[7].ToString().Trim();           
+            totalNumBox.Text = dr[8].ToString().Trim();            
+            locationBox.Text = dr[10].ToString().Trim();            
             conn.Close();
         }
 
