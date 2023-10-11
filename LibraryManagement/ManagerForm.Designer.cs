@@ -33,7 +33,6 @@
             EditBtn = new Button();
             addressBox = new TextBox();
             phoneNumberBox = new TextBox();
-            genderBox = new TextBox();
             nameBox = new TextBox();
             emailBox = new TextBox();
             managerIDBox = new TextBox();
@@ -45,6 +44,7 @@
             label2 = new Label();
             label1 = new Label();
             dataGridView1 = new DataGridView();
+            genderBox = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -76,57 +76,49 @@
             // 
             // addressBox
             // 
+            addressBox.Enabled = false;
             addressBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             addressBox.ForeColor = SystemColors.InfoText;
             addressBox.Location = new Point(204, 334);
             addressBox.Name = "addressBox";
-            addressBox.ReadOnly = true;
             addressBox.Size = new Size(310, 29);
             addressBox.TabIndex = 36;
             // 
             // phoneNumberBox
             // 
+            phoneNumberBox.Enabled = false;
             phoneNumberBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             phoneNumberBox.ForeColor = SystemColors.InfoText;
             phoneNumberBox.Location = new Point(204, 286);
             phoneNumberBox.Name = "phoneNumberBox";
-            phoneNumberBox.ReadOnly = true;
             phoneNumberBox.Size = new Size(310, 29);
             phoneNumberBox.TabIndex = 35;
             // 
-            // genderBox
-            // 
-            genderBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            genderBox.ForeColor = SystemColors.InfoText;
-            genderBox.Location = new Point(204, 232);
-            genderBox.Name = "genderBox";
-            genderBox.ReadOnly = true;
-            genderBox.Size = new Size(310, 29);
-            genderBox.TabIndex = 34;
-            // 
             // nameBox
             // 
+            nameBox.Enabled = false;
             nameBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             nameBox.ForeColor = SystemColors.InfoText;
             nameBox.ImeMode = ImeMode.NoControl;
             nameBox.Location = new Point(204, 182);
             nameBox.Name = "nameBox";
-            nameBox.ReadOnly = true;
             nameBox.Size = new Size(310, 29);
             nameBox.TabIndex = 33;
             // 
             // emailBox
             // 
+            emailBox.Enabled = false;
             emailBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             emailBox.ForeColor = SystemColors.InfoText;
             emailBox.Location = new Point(204, 133);
             emailBox.Name = "emailBox";
-            emailBox.ReadOnly = true;
             emailBox.Size = new Size(310, 29);
             emailBox.TabIndex = 32;
             // 
             // managerIDBox
             // 
+            managerIDBox.BackColor = SystemColors.Window;
+            managerIDBox.Enabled = false;
             managerIDBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             managerIDBox.ForeColor = SystemColors.InfoText;
             managerIDBox.Location = new Point(204, 86);
@@ -221,18 +213,27 @@
             dataGridView1.Size = new Size(514, 180);
             dataGridView1.TabIndex = 42;
             // 
+            // genderBox
+            // 
+            genderBox.Enabled = false;
+            genderBox.Items.AddRange(new object[] { "Female", "Male" });
+            genderBox.Location = new Point(204, 235);
+            genderBox.Name = "genderBox";
+            genderBox.Size = new Size(121, 23);
+            genderBox.TabIndex = 43;
+            // 
             // ManagerForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(238, 226, 220);
             ClientSize = new Size(584, 691);
+            Controls.Add(genderBox);
             Controls.Add(dataGridView1);
             Controls.Add(ChangePasswordBtn);
             Controls.Add(EditBtn);
             Controls.Add(addressBox);
             Controls.Add(phoneNumberBox);
-            Controls.Add(genderBox);
             Controls.Add(nameBox);
             Controls.Add(emailBox);
             Controls.Add(managerIDBox);
@@ -260,7 +261,6 @@
         private Button EditBtn;
         private TextBox addressBox;
         private TextBox phoneNumberBox;
-        private TextBox genderBox;
         private TextBox nameBox;
         private TextBox emailBox;
         private TextBox managerIDBox;
@@ -272,5 +272,6 @@
         private Label label2;
         private Label label1;
         private DataGridView dataGridView1;
+        private ComboBox genderBox;
     }
 }
