@@ -31,17 +31,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BorrowForm));
             CancleBtn = new Button();
             SendBtn = new Button();
-            memberIDBox = new TextBox();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            nameBox = new Label();
-            memberNameBox = new TextBox();
+            NameLabel = new Label();
             bookBox = new ComboBox();
             borrowDateBox = new DateTimePicker();
             returnDateBox = new DateTimePicker();
+            memberNameBox = new TextBox();
+            MemberIDBox = new ComboBox();
             SuspendLayout();
             // 
             // CancleBtn
@@ -69,16 +69,6 @@
             SendBtn.Text = "SEND";
             SendBtn.UseVisualStyleBackColor = false;
             SendBtn.Click += SendBtn_Click;
-            // 
-            // memberIDBox
-            // 
-            memberIDBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            memberIDBox.ForeColor = SystemColors.WindowFrame;
-            memberIDBox.Location = new Point(205, 110);
-            memberIDBox.Name = "memberIDBox";
-            memberIDBox.RightToLeft = RightToLeft.No;
-            memberIDBox.Size = new Size(310, 29);
-            memberIDBox.TabIndex = 31;
             // 
             // label5
             // 
@@ -135,28 +125,21 @@
             label1.TabIndex = 21;
             label1.Text = "BORROW BOOK";
             // 
-            // nameBox
+            // NameLabel
             // 
-            nameBox.AutoSize = true;
-            nameBox.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            nameBox.ForeColor = Color.FromArgb(18, 60, 105);
-            nameBox.Location = new Point(28, 183);
-            nameBox.Name = "nameBox";
-            nameBox.Size = new Size(144, 25);
-            nameBox.TabIndex = 42;
-            nameBox.Text = "Member Name";
-            // 
-            // memberNameBox
-            // 
-            memberNameBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            memberNameBox.ForeColor = SystemColors.WindowFrame;
-            memberNameBox.Location = new Point(205, 183);
-            memberNameBox.Name = "memberNameBox";
-            memberNameBox.Size = new Size(310, 29);
-            memberNameBox.TabIndex = 43;
+            NameLabel.AutoSize = true;
+            NameLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            NameLabel.ForeColor = Color.FromArgb(18, 60, 105);
+            NameLabel.Location = new Point(28, 183);
+            NameLabel.Name = "NameLabel";
+            NameLabel.Size = new Size(144, 25);
+            NameLabel.TabIndex = 42;
+            NameLabel.Text = "Member Name";
             // 
             // bookBox
             // 
+            bookBox.AutoCompleteMode = AutoCompleteMode.Suggest;
+            bookBox.AutoCompleteSource = AutoCompleteSource.ListItems;
             bookBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             bookBox.FormattingEnabled = true;
             bookBox.Location = new Point(205, 263);
@@ -180,19 +163,40 @@
             returnDateBox.Size = new Size(235, 23);
             returnDateBox.TabIndex = 46;
             // 
+            // memberNameBox
+            // 
+            memberNameBox.Enabled = false;
+            memberNameBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            memberNameBox.ForeColor = SystemColors.WindowFrame;
+            memberNameBox.Location = new Point(205, 183);
+            memberNameBox.Name = "memberNameBox";
+            memberNameBox.Size = new Size(310, 29);
+            memberNameBox.TabIndex = 43;
+            // 
+            // MemberIDBox
+            // 
+            MemberIDBox.AutoCompleteMode = AutoCompleteMode.Suggest;
+            MemberIDBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            MemberIDBox.FormattingEnabled = true;
+            MemberIDBox.Location = new Point(205, 110);
+            MemberIDBox.Name = "MemberIDBox";
+            MemberIDBox.Size = new Size(139, 29);
+            MemberIDBox.TabIndex = 47;
+            MemberIDBox.SelectionChangeCommitted += MemberIDBox_SelectionChangeCommitted;
+            // 
             // BorrowForm
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(238, 226, 220);
             ClientSize = new Size(584, 671);
+            Controls.Add(MemberIDBox);
             Controls.Add(returnDateBox);
             Controls.Add(borrowDateBox);
             Controls.Add(bookBox);
             Controls.Add(memberNameBox);
-            Controls.Add(nameBox);
+            Controls.Add(NameLabel);
             Controls.Add(CancleBtn);
             Controls.Add(SendBtn);
-            Controls.Add(memberIDBox);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -202,6 +206,7 @@
             Margin = new Padding(2);
             Name = "BorrowForm";
             Text = "Borrow Book";
+            Load += BorrowForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -215,7 +220,6 @@
         private TextBox descriptionBox;
         private TextBox pagesBox;
         private TextBox pubDateBox;
-        private TextBox memberIDBox;
         private Label label10;
         private Label label9;
         private Label label8;
@@ -225,10 +229,11 @@
         private Label label3;
         private Label label2;
         private Label label1;
-        private Label nameBox;
-        private TextBox memberNameBox;
+        private Label NameLabel;
         private ComboBox bookBox;
         private DateTimePicker borrowDateBox;
         private DateTimePicker returnDateBox;
+        private TextBox memberNameBox;
+        private ComboBox MemberIDBox;
     }
 }
