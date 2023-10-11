@@ -73,15 +73,15 @@ namespace LibraryManagement
                 // update to db
                 SqlConnection conn = new SqlConnection(MyGlobals.connectionStr);
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("update dbo.Manager set Name = @Name, Email = @Email, Gender = @Gender, [Phone number] = @Phone_number, Address = @Address where Manager ID = @ID", conn);
+                SqlCommand cmd = new SqlCommand("update dbo.Manager set Name = @Name, Email = @Email, Gender = @Gender, [Phone number] = @Phone_number, Address = @Address where [Manager ID] = @ID", conn);
                 cmd.Parameters.AddWithValue("@ID", int.Parse(LoginForm.Manager_ID));
                 cmd.Parameters.AddWithValue("@Name", nameBox.Text);
                 cmd.Parameters.AddWithValue("@Email", emailBox.Text);
-                cmd.Parameters.AddWithValue("@Gender", genderBox.Items);
+                cmd.Parameters.AddWithValue("@Gender", genderBox.SelectedItem);
                 cmd.Parameters.AddWithValue("@Phone_number", phoneNumberBox.Text);
                 cmd.Parameters.AddWithValue("@Address", addressBox.Text);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("changed saved !");
+                MessageBox.Show("changes saved !");
                 conn.Close();
             }
         }
