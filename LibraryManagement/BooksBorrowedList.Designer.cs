@@ -65,6 +65,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "BooksBorrowedList";
             Text = "List of Borrowed Books";
+            Load += BooksBorrowedList_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

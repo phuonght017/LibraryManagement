@@ -36,8 +36,11 @@
             OverdueCheckBox = new CheckBox();
             BorrowingCheckBox = new CheckBox();
             addMemberBtn = new Button();
+            dataGridView1 = new DataGridView();
+            ResetBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             filteringBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -73,6 +76,7 @@
             SearchBtn.Text = "SEARCH";
             SearchBtn.UseMnemonic = false;
             SearchBtn.UseVisualStyleBackColor = false;
+            SearchBtn.Click += SearchBtn_Click;
             // 
             // filteringBox
             // 
@@ -127,17 +131,46 @@
             addMemberBtn.UseVisualStyleBackColor = false;
             addMemberBtn.Click += addMemberBtn_Click;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.BackgroundColor = Color.FromArgb(238, 226, 220);
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(29, 269);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(996, 353);
+            dataGridView1.TabIndex = 6;
+            dataGridView1.CellClick += dataGridView1_CellClick;
+            // 
+            // ResetBtn
+            // 
+            ResetBtn.BackColor = Color.FromArgb(172, 40, 90);
+            ResetBtn.Font = new Font("Segoe UI Emoji", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            ResetBtn.ForeColor = Color.FromArgb(238, 226, 220);
+            ResetBtn.Location = new Point(700, 226);
+            ResetBtn.Name = "ResetBtn";
+            ResetBtn.Size = new Size(130, 45);
+            ResetBtn.TabIndex = 7;
+            ResetBtn.Text = "Reset";
+            ResetBtn.UseMnemonic = false;
+            ResetBtn.UseVisualStyleBackColor = false;
+            ResetBtn.Click += ResetBtn_Click;
+            // 
             // MembersForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(238, 226, 220);
-            ClientSize = new Size(1054, 681);
-            Controls.Add(addMemberBtn);
+            ClientSize = new Size(1054, 634);
+            Controls.Add(dataGridView1);
             Controls.Add(filteringBox);
             Controls.Add(SearchBtn);
             Controls.Add(SearchBox);
             Controls.Add(pictureBox1);
+            Controls.Add(addMemberBtn);
+            Controls.Add(ResetBtn);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
             Name = "MembersForm";
@@ -145,6 +178,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             filteringBox.ResumeLayout(false);
             filteringBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -158,5 +192,7 @@
         private CheckBox OverdueCheckBox;
         private CheckBox BorrowingCheckBox;
         private Button addMemberBtn;
+        private DataGridView dataGridView1;
+        private Button ResetBtn;
     }
 }

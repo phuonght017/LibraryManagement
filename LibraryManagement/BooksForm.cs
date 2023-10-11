@@ -105,7 +105,6 @@ namespace LibraryManagement
 
         private void SearchBtn_Click(object sender, EventArgs e)
         {
-            filteringBox.Enabled = true;
             SqlConnection conn = new SqlConnection(MyGlobals.connectionStr);
             conn.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.Books WHERE CHARINDEX(@keyword, Title) > 0 OR CHARINDEX(@keyword, Author) > 0 OR CHARINDEX(@keyword, Publisher) > 0  ", conn);
@@ -129,6 +128,9 @@ namespace LibraryManagement
             dataGridView1.DataSource = dt;
             dataGridView1.Columns[1].DefaultCellStyle.BackColor = Color.Aqua;
             conn.Close();
+
+            availableCheckBox.Checked = false;
+            OutCheckBox.Checked = false;
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

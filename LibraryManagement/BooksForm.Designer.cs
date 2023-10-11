@@ -140,7 +140,7 @@
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(996, 468);
+            dataGridView1.Size = new Size(996, 440);
             dataGridView1.TabIndex = 5;
             dataGridView1.CellClick += dataGridView1_CellClick;
             // 
@@ -164,15 +164,15 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(238, 226, 220);
             ClientSize = new Size(1054, 634);
-            Controls.Add(ResetBtn);
             Controls.Add(dataGridView1);
             Controls.Add(addBookBtn);
             Controls.Add(filteringBox);
             Controls.Add(SearchBtn);
             Controls.Add(SearchBox);
             Controls.Add(pictureBox1);
+            Controls.Add(ResetBtn);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "BooksForm";
             Text = "Books";
             Load += BooksForm_Load;

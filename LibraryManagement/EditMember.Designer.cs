@@ -30,10 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditMember));
             genderBox = new ComboBox();
-            DOBBox = new DateTimePicker();
             CancleBtn = new Button();
             SaveBtn = new Button();
-            expirationBox = new TextBox();
             emailBox = new TextBox();
             phoneBox = new TextBox();
             nameBox = new TextBox();
@@ -47,6 +45,9 @@
             label2 = new Label();
             label1 = new Label();
             ShowListLabel = new Label();
+            ageBox = new NumericUpDown();
+            expirationBox = new DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)ageBox).BeginInit();
             SuspendLayout();
             // 
             // genderBox
@@ -59,17 +60,6 @@
             genderBox.Name = "genderBox";
             genderBox.Size = new Size(144, 29);
             genderBox.TabIndex = 60;
-            // 
-            // DOBBox
-            // 
-            DOBBox.CalendarForeColor = SystemColors.ControlDarkDark;
-            DOBBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            DOBBox.Format = DateTimePickerFormat.Short;
-            DOBBox.Location = new Point(210, 281);
-            DOBBox.MinDate = new DateTime(1950, 10, 10, 0, 0, 0, 0);
-            DOBBox.Name = "DOBBox";
-            DOBBox.Size = new Size(144, 29);
-            DOBBox.TabIndex = 59;
             // 
             // CancleBtn
             // 
@@ -96,15 +86,6 @@
             SaveBtn.Text = "SAVE";
             SaveBtn.UseVisualStyleBackColor = false;
             SaveBtn.Click += SaveBtn_Click;
-            // 
-            // expirationBox
-            // 
-            expirationBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            expirationBox.ForeColor = SystemColors.WindowFrame;
-            expirationBox.Location = new Point(210, 547);
-            expirationBox.Name = "expirationBox";
-            expirationBox.Size = new Size(310, 29);
-            expirationBox.TabIndex = 56;
             // 
             // emailBox
             // 
@@ -135,11 +116,11 @@
             // 
             // memberIDBox
             // 
+            memberIDBox.Enabled = false;
             memberIDBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             memberIDBox.ForeColor = SystemColors.WindowFrame;
             memberIDBox.Location = new Point(210, 139);
             memberIDBox.Name = "memberIDBox";
-            memberIDBox.ReadOnly = true;
             memberIDBox.Size = new Size(310, 29);
             memberIDBox.TabIndex = 52;
             // 
@@ -192,11 +173,11 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.FromArgb(18, 60, 105);
-            label4.Location = new Point(37, 281);
+            label4.Location = new Point(84, 280);
             label4.Name = "label4";
-            label4.Size = new Size(128, 25);
+            label4.Size = new Size(47, 25);
             label4.TabIndex = 47;
-            label4.Text = "Date Of Birth";
+            label4.Text = "Age";
             // 
             // label3
             // 
@@ -244,18 +225,34 @@
             ShowListLabel.TextAlign = ContentAlignment.MiddleCenter;
             ShowListLabel.Click += ShowListLabel_Click;
             // 
+            // ageBox
+            // 
+            ageBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ageBox.Location = new Point(210, 281);
+            ageBox.Name = "ageBox";
+            ageBox.Size = new Size(68, 29);
+            ageBox.TabIndex = 62;
+            // 
+            // expirationBox
+            // 
+            expirationBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            expirationBox.Location = new Point(210, 548);
+            expirationBox.Name = "expirationBox";
+            expirationBox.Size = new Size(175, 29);
+            expirationBox.TabIndex = 63;
+            // 
             // EditMember
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(238, 226, 220);
             ClientSize = new Size(584, 691);
+            Controls.Add(expirationBox);
+            Controls.Add(ageBox);
             Controls.Add(ShowListLabel);
             Controls.Add(genderBox);
-            Controls.Add(DOBBox);
             Controls.Add(CancleBtn);
             Controls.Add(SaveBtn);
-            Controls.Add(expirationBox);
             Controls.Add(emailBox);
             Controls.Add(phoneBox);
             Controls.Add(nameBox);
@@ -272,6 +269,8 @@
             Margin = new Padding(2);
             Name = "EditMember";
             Text = "Edit Member Profile";
+            Load += EditMember_Load;
+            ((System.ComponentModel.ISupportInitialize)ageBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -279,10 +278,8 @@
         #endregion
 
         private ComboBox genderBox;
-        private DateTimePicker DOBBox;
         private Button CancleBtn;
         private Button SaveBtn;
-        private TextBox expirationBox;
         private TextBox emailBox;
         private TextBox phoneBox;
         private TextBox nameBox;
@@ -296,5 +293,7 @@
         private Label label2;
         private Label label1;
         private Label ShowListLabel;
+        private NumericUpDown ageBox;
+        private DateTimePicker expirationBox;
     }
 }
