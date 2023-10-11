@@ -15,6 +15,7 @@ namespace LibraryManagement
 {
     public partial class LoginForm : Form
     {
+        public static string Manager_ID;
         public LoginForm()
         {
             InitializeComponent();
@@ -44,6 +45,7 @@ namespace LibraryManagement
                 if (email == dr[6].ToString().Trim() && password  == dr[1].ToString().Trim())
                 {
                     authorized = true;
+                    Manager_ID = dr[0].ToString().Trim();
                     MenuForm f1 = new MenuForm();
                     f1.Show();
                     this.Hide();
@@ -62,5 +64,5 @@ namespace LibraryManagement
 
 public static class MyGlobals
 {
-    public static string connectionStr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\10lya\\source\\repos\\projekt\\LibraryManagement\\Lib-DB\\Database2.mdf;Integrated Security=True;Connect Timeout=30";
+    public static string connectionStr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=D:\\ProjectCode\\CSharp\\GitClone\\LibraryManagement\\Lib-DB\\Database2.mdf;Integrated Security=True;Connect Timeout=30";
 }

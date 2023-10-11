@@ -35,7 +35,6 @@
             totalNumBox = new TextBox();
             descriptionBox = new TextBox();
             pagesBox = new TextBox();
-            pubDateBox = new TextBox();
             priceBox = new TextBox();
             authorBox = new TextBox();
             publisherBox = new TextBox();
@@ -50,9 +49,9 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            availableNumberBox = new TextBox();
-            label11 = new Label();
             ShowListLabel = new Label();
+            DeleteBtn = new Button();
+            pubDateBox = new DateTimePicker();
             SuspendLayout();
             // 
             // CancleBtn
@@ -60,7 +59,7 @@
             CancleBtn.BackColor = Color.FromArgb(172, 84, 114);
             CancleBtn.Font = new Font("Segoe UI Emoji", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             CancleBtn.ForeColor = Color.FromArgb(238, 226, 220);
-            CancleBtn.Location = new Point(317, 688);
+            CancleBtn.Location = new Point(221, 654);
             CancleBtn.Name = "CancleBtn";
             CancleBtn.Size = new Size(145, 50);
             CancleBtn.TabIndex = 41;
@@ -73,7 +72,7 @@
             SaveBtn.BackColor = Color.FromArgb(212, 59, 111);
             SaveBtn.Font = new Font("Segoe UI Emoji", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             SaveBtn.ForeColor = Color.FromArgb(238, 226, 220);
-            SaveBtn.Location = new Point(143, 688);
+            SaveBtn.Location = new Point(47, 654);
             SaveBtn.Name = "SaveBtn";
             SaveBtn.Size = new Size(145, 50);
             SaveBtn.TabIndex = 40;
@@ -85,7 +84,7 @@
             // 
             locationBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             locationBox.ForeColor = SystemColors.WindowFrame;
-            locationBox.Location = new Point(194, 616);
+            locationBox.Location = new Point(192, 572);
             locationBox.Name = "locationBox";
             locationBox.Size = new Size(310, 29);
             locationBox.TabIndex = 39;
@@ -94,7 +93,7 @@
             // 
             totalNumBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             totalNumBox.ForeColor = SystemColors.WindowFrame;
-            totalNumBox.Location = new Point(194, 502);
+            totalNumBox.Location = new Point(192, 511);
             totalNumBox.Name = "totalNumBox";
             totalNumBox.Size = new Size(310, 29);
             totalNumBox.TabIndex = 38;
@@ -103,7 +102,7 @@
             // 
             descriptionBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             descriptionBox.ForeColor = SystemColors.WindowFrame;
-            descriptionBox.Location = new Point(194, 453);
+            descriptionBox.Location = new Point(192, 462);
             descriptionBox.Name = "descriptionBox";
             descriptionBox.Size = new Size(310, 29);
             descriptionBox.TabIndex = 37;
@@ -112,25 +111,16 @@
             // 
             pagesBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             pagesBox.ForeColor = SystemColors.WindowFrame;
-            pagesBox.Location = new Point(194, 399);
+            pagesBox.Location = new Point(192, 408);
             pagesBox.Name = "pagesBox";
             pagesBox.Size = new Size(310, 29);
             pagesBox.TabIndex = 36;
-            // 
-            // pubDateBox
-            // 
-            pubDateBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            pubDateBox.ForeColor = SystemColors.WindowFrame;
-            pubDateBox.Location = new Point(194, 351);
-            pubDateBox.Name = "pubDateBox";
-            pubDateBox.Size = new Size(310, 29);
-            pubDateBox.TabIndex = 35;
             // 
             // priceBox
             // 
             priceBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             priceBox.ForeColor = SystemColors.WindowFrame;
-            priceBox.Location = new Point(194, 297);
+            priceBox.Location = new Point(192, 301);
             priceBox.Name = "priceBox";
             priceBox.Size = new Size(310, 29);
             priceBox.TabIndex = 34;
@@ -139,7 +129,7 @@
             // 
             authorBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             authorBox.ForeColor = SystemColors.WindowFrame;
-            authorBox.Location = new Point(194, 247);
+            authorBox.Location = new Point(192, 252);
             authorBox.Name = "authorBox";
             authorBox.Size = new Size(310, 29);
             authorBox.TabIndex = 33;
@@ -148,7 +138,7 @@
             // 
             publisherBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             publisherBox.ForeColor = SystemColors.WindowFrame;
-            publisherBox.Location = new Point(194, 198);
+            publisherBox.Location = new Point(192, 202);
             publisherBox.Name = "publisherBox";
             publisherBox.Size = new Size(310, 29);
             publisherBox.TabIndex = 32;
@@ -157,7 +147,7 @@
             // 
             titleBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             titleBox.ForeColor = SystemColors.WindowFrame;
-            titleBox.Location = new Point(194, 151);
+            titleBox.Location = new Point(192, 156);
             titleBox.Name = "titleBox";
             titleBox.Size = new Size(310, 29);
             titleBox.TabIndex = 31;
@@ -167,7 +157,7 @@
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label10.ForeColor = Color.FromArgb(18, 60, 105);
-            label10.Location = new Point(57, 620);
+            label10.Location = new Point(55, 571);
             label10.Name = "label10";
             label10.Size = new Size(89, 25);
             label10.TabIndex = 30;
@@ -178,7 +168,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label9.ForeColor = Color.FromArgb(18, 60, 105);
-            label9.Location = new Point(51, 506);
+            label9.Location = new Point(29, 510);
             label9.Name = "label9";
             label9.Size = new Size(134, 25);
             label9.TabIndex = 29;
@@ -189,7 +179,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label8.ForeColor = Color.FromArgb(18, 60, 105);
-            label8.Location = new Point(51, 457);
+            label8.Location = new Point(49, 462);
             label8.Name = "label8";
             label8.Size = new Size(114, 25);
             label8.TabIndex = 28;
@@ -200,7 +190,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.FromArgb(18, 60, 105);
-            label7.Location = new Point(51, 403);
+            label7.Location = new Point(49, 408);
             label7.Name = "label7";
             label7.Size = new Size(64, 25);
             label7.TabIndex = 27;
@@ -211,7 +201,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label6.ForeColor = Color.FromArgb(18, 60, 105);
-            label6.Location = new Point(51, 355);
+            label6.Location = new Point(49, 360);
             label6.Name = "label6";
             label6.Size = new Size(123, 25);
             label6.TabIndex = 26;
@@ -222,7 +212,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.FromArgb(18, 60, 105);
-            label5.Location = new Point(51, 301);
+            label5.Location = new Point(49, 306);
             label5.Name = "label5";
             label5.Size = new Size(56, 25);
             label5.TabIndex = 25;
@@ -233,7 +223,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.FromArgb(18, 60, 105);
-            label4.Location = new Point(51, 251);
+            label4.Location = new Point(47, 252);
             label4.Name = "label4";
             label4.Size = new Size(75, 25);
             label4.TabIndex = 24;
@@ -244,7 +234,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(18, 60, 105);
-            label3.Location = new Point(51, 202);
+            label3.Location = new Point(47, 206);
             label3.Name = "label3";
             label3.Size = new Size(95, 25);
             label3.TabIndex = 23;
@@ -255,7 +245,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(18, 60, 105);
-            label2.Location = new Point(57, 155);
+            label2.Location = new Point(55, 156);
             label2.Name = "label2";
             label2.Size = new Size(50, 25);
             label2.TabIndex = 22;
@@ -272,26 +262,6 @@
             label1.TabIndex = 21;
             label1.Text = "EDIT TITLE";
             // 
-            // availableNumberBox
-            // 
-            availableNumberBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            availableNumberBox.ForeColor = SystemColors.WindowFrame;
-            availableNumberBox.Location = new Point(194, 559);
-            availableNumberBox.Name = "availableNumberBox";
-            availableNumberBox.Size = new Size(310, 29);
-            availableNumberBox.TabIndex = 43;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.ForeColor = Color.FromArgb(18, 60, 105);
-            label11.Location = new Point(17, 559);
-            label11.Name = "label11";
-            label11.Size = new Size(171, 25);
-            label11.TabIndex = 42;
-            label11.Text = "Available Number";
-            // 
             // ShowListLabel
             // 
             ShowListLabel.BackColor = Color.FromArgb(254, 183, 143);
@@ -299,28 +269,50 @@
             ShowListLabel.ForeColor = Color.FromArgb(18, 60, 105);
             ShowListLabel.Location = new Point(1, 88);
             ShowListLabel.Name = "ShowListLabel";
-            ShowListLabel.Size = new Size(583, 37);
+            ShowListLabel.Size = new Size(583, 38);
             ShowListLabel.TabIndex = 44;
             ShowListLabel.Text = ">> Show list of students borrowing this book";
             ShowListLabel.TextAlign = ContentAlignment.MiddleCenter;
             ShowListLabel.Click += ShowListLabel_Click;
             // 
+            // DeleteBtn
+            // 
+            DeleteBtn.BackColor = Color.FromArgb(157, 0, 53);
+            DeleteBtn.Font = new Font("Segoe UI Emoji", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            DeleteBtn.ForeColor = Color.FromArgb(238, 226, 220);
+            DeleteBtn.Location = new Point(397, 654);
+            DeleteBtn.Name = "DeleteBtn";
+            DeleteBtn.Size = new Size(145, 50);
+            DeleteBtn.TabIndex = 45;
+            DeleteBtn.Text = "DELETE";
+            DeleteBtn.UseVisualStyleBackColor = false;
+            DeleteBtn.Click += DeleteBtn_Click;
+            // 
+            // pubDateBox
+            // 
+            pubDateBox.CalendarFont = new Font("Segoe UI Emoji", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            pubDateBox.Format = DateTimePickerFormat.Short;
+            pubDateBox.Location = new Point(192, 360);
+            pubDateBox.Name = "pubDateBox";
+            pubDateBox.Size = new Size(186, 23);
+            pubDateBox.TabIndex = 46;
+            // 
             // EditBook
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             BackColor = Color.FromArgb(238, 226, 220);
-            ClientSize = new Size(584, 772);
+            ClientSize = new Size(584, 716);
+            Controls.Add(pubDateBox);
+            Controls.Add(DeleteBtn);
             Controls.Add(ShowListLabel);
-            Controls.Add(availableNumberBox);
-            Controls.Add(label11);
             Controls.Add(CancleBtn);
             Controls.Add(SaveBtn);
             Controls.Add(locationBox);
             Controls.Add(totalNumBox);
             Controls.Add(descriptionBox);
             Controls.Add(pagesBox);
-            Controls.Add(pubDateBox);
             Controls.Add(priceBox);
             Controls.Add(authorBox);
             Controls.Add(publisherBox);
@@ -352,7 +344,6 @@
         private TextBox totalNumBox;
         private TextBox descriptionBox;
         private TextBox pagesBox;
-        private TextBox pubDateBox;
         private TextBox priceBox;
         private TextBox authorBox;
         private TextBox publisherBox;
@@ -367,8 +358,8 @@
         private Label label3;
         private Label label2;
         private Label label1;
-        private TextBox availableNumberBox;
-        private Label label11;
         private Label ShowListLabel;
+        private Button DeleteBtn;
+        private DateTimePicker pubDateBox;
     }
 }
