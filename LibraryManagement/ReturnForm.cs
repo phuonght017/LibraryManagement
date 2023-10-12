@@ -31,7 +31,7 @@ namespace LibraryManagement
                 borrowedListBox.Visible = true;
                 SqlConnection conn = new SqlConnection(MyGlobals.connectionStr);
                 conn.Open();
-                string query = "select distinct br.[Borrow ID] as ID, std.Name as [Student name], bk.Title [Book title], br.[Borrowed date], br.[Expiration date] " +
+                string query = "select distinct br.[Borrow ID] as ID, std.Name as [Student name], bk.Title [Book title], br.[Borrowed date], br.[Expiration date], bk.[Book ID] " +
                                "from dbo.Students std, dbo.Books bk, dbo.Manager mn, dbo.Borrowed br " +
                                "where br.[Student ID] = @ID and std.[Student ID] = br.[Student ID] " +
                                "and br.[Book ID] = bk.[Book ID] " +
@@ -42,6 +42,7 @@ namespace LibraryManagement
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 borrowedListBox.DataSource = dt;
+                borrowedListBox.Columns[6].Visible = false;
                 conn.Close();
             }
             borrowedListBox.Columns[0].ReadOnly = false;
@@ -73,7 +74,8 @@ namespace LibraryManagement
                     cmd.Parameters.AddWithValue("@Overdue", overdue);
                     cmd.ExecuteNonQuery();
 
-                    SqlCommand update = new SqlCommand("update dbo.Books set [Available number] = [Available number] + 1", conn);
+                    SqlCommand update = new SqlCommand("update dbo.Books set [Available number] = [Available number] + 1 where [Book ID] = @ID", conn);
+                    update.Parameters.AddWithValue("@ID", int.Parse(row.Cells[6].Value.ToString().Trim()));
                     update.ExecuteNonQuery();
                     conn.Close();
                 }
